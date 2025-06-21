@@ -1,0 +1,169 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6366f1;  /* Modern indigo */
+  --secondary-color: #f59e0b; /* Amber for accents */
+  --dark-bg: #1f2937;
+  --light-bg: #f9fafb;
+  --text-dark: #111827;
+  --text-light: #f3f4f6;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+/* Sidebar - Modern Glass Morphism Effect */
+.sidebar {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .sidebar {
+  background: rgba(31, 41, 55, 0.85) !important;
+}
+
+/* Navbar - Sticky with subtle shadow */
+.nav-item, .navbar {
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Sidebar */
+@media screen and (max-width: 800px) {
+  .sidebar {
+    z-index: 10000000;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+/* Dialog Modals */
+.e-dlg-center-center, .e-quick-popup-wrapper.e-device {
+  z-index: 1000000 !important;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(99, 102, 241, 0.5);
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Enhanced Color Picker */
+#preview {
+  background: transparent url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png') no-repeat;
+  height: 80px;
+  margin: 10px 0;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs - Modern Style */
+.e-input-group:not(.e-float-icon-left), 
+.e-input-group.e-success:not(.e-float-icon-left), 
+.e-input-group.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-error:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), 
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+  border: none;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.e-input-group:hover {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* E-commerce Specific Additions */
+.product-card {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.price-tag {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Cart Badge Animation */
+.cart-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 3px solid rgba(99, 102, 241, 0.2);
+  border-top: 3px solid var(--primary-color);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button Animations */
+.primary-btn {
+  background: var(--primary-color);
+  transition: all 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
